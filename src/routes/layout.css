@@ -1,0 +1,15 @@
+/* Ensure this is at the top of your layout.css */
+@import 'tailwindcss';
+@import '@fontsource/fira-mono';
+
+:root {
+	--pit-black: #050507;
+	--arcane-indigo: #6366f1;
+}
+
+body {
+	margin: 0;
+	background-color: var(--pit-black);
+	color: #e2e8f0;
+	font-family: sans-serif;
+}
