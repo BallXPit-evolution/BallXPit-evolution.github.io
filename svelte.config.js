@@ -6,7 +6,7 @@ export default {
       fallback: 'index.html'
     }),
     paths: {
-      base: process.env.NODE_ENV === 'production' ? '/Ball_X_Evolution' : ''
+      base: process.env.NODE_ENV === 'production' ? '/BallXPit-evolution.github.io' : ''
     }
   }
 };
