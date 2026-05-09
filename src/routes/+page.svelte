@@ -247,6 +247,10 @@
 
 							<ImageRenderer cellBall={cellBall} row={row} col={col} isCollected={isBallInCollection(cellBall)} />
 
+						{:else if row == col}
+							<div class="opacity-10 transition-opacity group-hover:opacity-40">
+								<span class="font-mono text-[36px] text-white">X</span>
+							</div>
 						{:else if row > 0 && col > 0}
 							<div class="opacity-10 transition-opacity group-hover:opacity-40">
 								<span class="font-mono text-[36px] text-indigo-300 opacity-10">?</span>
