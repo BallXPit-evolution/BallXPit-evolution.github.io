@@ -24,6 +24,9 @@
 	let hasMoved = $state(false);
 	let dragStart = { x: 0, y: 0 };
 
+	let initialTouchDist = 0;
+	let initialTouchScale = 1;
+
 	let showTooltip = $state(false);
 	let selectedBall = $state<Ball | null>(null);
 	let descExpanded = $state(false);
@@ -58,6 +61,70 @@
 		const p1 = baseBalls[row - 1].name;
 		const p2 = baseBalls[col - 1].name;
 		return getEvolutionBallFromParents([p1, p2], evolutionBalls) || null;
+	}
+
+	function handleTouchStart(e: TouchEvent) {
+		if (e.touches.length === 1) {
+			// Single finger: Start dragging
+			const touch = e.touches[0];
+			isDragging = true;
+			hasMoved = false;
+			dragStart = { x: touch.clientX - pos.x, y: touch.clientY - pos.y };
+		} else if (e.touches.length === 2) {
+			// Two fingers: Start pinch zoom
+			isDragging = false; // Prevent dragging while zooming
+			const dist = Math.hypot(
+				e.touches[0].clientX - e.touches[1].clientX,
+				e.touches[0].clientY - e.touches[1].clientY
+			);
+			initialTouchDist = dist;
+			initialTouchScale = scale;
+		}
+	}
+
+	function handleTouchMove(e: TouchEvent) {
+		if (e.touches.length === 1 && isDragging) {
+			// Single finger: Dragging logic
+			const touch = e.touches[0];
+			const dx = Math.abs(touch.clientX - (dragStart.x + pos.x));
+			const dy = Math.abs(touch.clientY - (dragStart.y + pos.y));
+			if (dx > 5 || dy > 5) hasMoved = true;
+
+			pos.x = touch.clientX - dragStart.x;
+			pos.y = touch.clientY - dragStart.y;
+		} else if (e.touches.length === 2) {
+			// Two fingers: Pinch zoom logic
+			e.preventDefault(); // Prevent page scrolling
+			const touch1 = e.touches[0];
+			const touch2 = e.touches[1];
+			const dist = Math.hypot(touch1.clientX - touch2.clientX, touch1.clientY - touch2.clientY);
+
+			if (initialTouchDist > 0) {
+				const factor = dist / initialTouchDist;
+				const newScale = Math.min(Math.max(0.1, initialTouchScale * factor), 4);
+
+				// Calculate midpoint for zoom anchor
+				const midX = (touch1.clientX + touch2.clientX) / 2;
+				const midY = (touch1.clientY + touch2.clientY) / 2;
+
+				const target = e.currentTarget as HTMLElement;
+				const rect = target.getBoundingClientRect();
+				const mouseX = midX - rect.left;
+				const mouseY = midY - rect.top;
+
+				const gridX = (mouseX - pos.x) / scale;
+				const gridY = (mouseY - pos.y) / scale;
+
+				scale = newScale;
+				pos.x = mouseX - gridX * scale;
+				pos.y = mouseY - gridY * scale;
+			}
+		}
+	}
+
+	function handleTouchEnd() {
+		isDragging = false;
+		initialTouchDist = 0;
 	}
 
 	function handleWheel(e: WheelEvent) {
@@ -138,6 +205,9 @@
 	onmousemove={onMouseMove}
 	onmouseup={onMouseUp}
 	onmouseleave={onMouseUp}
+	ontouchstart={handleTouchStart}
+	ontouchmove={handleTouchMove}
+	ontouchend={handleTouchEnd}
 	role="presentation"
 >
 	<div
@@ -184,7 +254,7 @@
 
 {#if showTooltip && selectedBall}
 	<aside
-		class="fixed right-12 bottom-12 z-50 flex min-h-[520px] w-[36rem] flex-col overflow-hidden rounded-xl border border-indigo-500 bg-[#0f0f12] text-slate-200 shadow-[0_0_80px_rgba(99,102,241,0.5)] backdrop-blur-2xl"
+		class="fixed right-4 bottom-4 left-4 z-50 flex min-h-[520px] flex-col overflow-hidden rounded-xl border border-indigo-500 bg-[#0f0f12] text-slate-200 shadow-[0_0_80px_rgba(99,102,241,0.5)] backdrop-blur-2xl sm:right-12 sm:bottom-12 sm:left-auto sm:w-[36rem]"
 	>
 		<div
 			class="relative flex h-[180px] flex-shrink-0 items-center justify-center border-b border-indigo-900/50 bg-gradient-to-b from-indigo-950/50 to-transparent p-10"
