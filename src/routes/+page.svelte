@@ -10,10 +10,11 @@
 	import ballData from '$lib/json/balls.json';
 	import { loadCompletion } from '$lib/utils/completion';
 	import ImageRenderer from '$lib/components/ImageRenderer.svelte';
+	import { browser } from '$app/environment';
 
 	// Initialize balls and resolve references
 	const allBalls = createAllBalls(ballData);
-	const collection: Array<Ball> = loadCompletion(allBalls);
+	let collection: Array<Ball> = $state([]);
 	let baseBalls = $derived(getAxisBalls(allBalls));
 	let evolutionBalls = $derived(getEvolutionBalls(allBalls));
 
@@ -53,6 +54,10 @@
 			x: (viewportWidth - scaledGridSize) / 2,
 			y: (viewportHeight - scaledGridSize) / 2
 		};
+
+		if(browser){
+			collection = loadCompletion(allBalls);
+		}
 	});
 
 	function getBallAtCoord(row: number, col: number): Ball | null {
