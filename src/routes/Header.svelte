@@ -12,6 +12,9 @@
 			<li aria-current={page.url.pathname === '/' ? 'page' : undefined}>
 				<a href={resolve('/')}>Evolutions Chart</a>
 			</li>
+			<li aria-current={page.url.pathname === '/collection' ? 'page' : undefined}>
+				<a href={resolve('/collection')}>Collection</a>
+			</li>
 			<!-- <li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
 				<a href={resolve('/about')}>Library</a>
 			</li> -->

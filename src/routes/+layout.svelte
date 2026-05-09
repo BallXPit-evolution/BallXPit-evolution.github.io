@@ -5,34 +5,9 @@
 	let { children } = $props();
 </script>
 
-<div class="app">
+<div class="app flex h-screen flex-col">
 	<Header />
-	<main>
+	<main class="flex-1 overflow-y-auto overflow-x-hidden">
 		{@render children()}
 	</main>
 </div>
-
-<style>
-	:global(body, html) {
-		margin: 0;
-		padding: 0;
-		height: 100vh;
-		width: 100vw;
-		overflow: hidden;
-		background-color: #050507;
-	}
-
-	.app {
-		display: flex;
-		flex-direction: column;
-		height: 100vh;
-		width: 100vw;
-	}
-
-	main {
-		flex: 1;
-		position: relative;
-		overflow: hidden; /* Keeps the grid from spilling out */
-		z-index: 1;
-	}
-</style>

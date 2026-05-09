@@ -16,7 +16,7 @@ export function removeCompletion(removeBall: Ball, completionList: Array<Ball>):
     return completionList.filter(b => removeBall.name != b.name);
 }
 
-export function saveCompletionBalls(data: Array<Ball>){
+export function saveCompletion(data: Array<Ball>){
     setCookie(cookieName, JSON.stringify(data.map(e => e.name)) );
 }
 
