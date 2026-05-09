@@ -17,8 +17,12 @@
 	let query = $state('');
 	let selected = $state(null);
 
+    let remainingBalls = $derived(
+        allBalls.filter((b) => !collection.map(c => c.name).includes(b.name))
+    )
+
 	let filteredBalls = $derived(
-		allBalls.filter((b) => b.name.toLowerCase().includes(query.toLowerCase()))
+		remainingBalls.filter((b) => b.name.toLowerCase().includes(query.toLowerCase()))
 	);
 
 	$inspect(collection);
@@ -72,7 +76,7 @@
 					{#if filteredBalls.length === 0}
 						<li class="px-3 py-2 text-gray-500">No results</li>
 					{:else}
-						{#each filteredBalls as ball (`select-${ball.name}`)}
+						{#each remainingBalls as ball (`select-${ball.name}`)}
 							<li class="cursor-pointer px-3 py-2 hover:bg-gray-100" onclick={() => doAdd(ball)}>
 								{ball.name}
 							</li>
