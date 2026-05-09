@@ -49,7 +49,7 @@
 
 <div class="m-8 h-full w-full bg-[#050507]">
     <!-- counter -->
-	<p class="pb-8">Your collection has {collection.length} {collection.length == 1 ? 'entry' : 'entries'} (Game has {allBalls.length} total evolutions).</p>
+	<p class="pb-8">Your collection has {collection.length} {collection.length == 1 ? 'entry' : 'entries'} (Game has {allBalls.length} total balls)</p>
 
 	<div class="relative w-64">
         <!-- dropdown btn -->
