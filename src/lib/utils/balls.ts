@@ -65,6 +65,7 @@ export function getEvolutionBalls(ballArray: Array<Ball>): Array<Ball> {
 	return ballArray.filter((ball) => ball.parents != undefined && ball.parents.length > 0);
 }
 
+// can be optimised
 export function getAxisBalls(ballArray: Array<Ball>): Array<Ball> {
 	const ballsToShow: Array<string> = [];
 	const response: Array<Ball> = [];
@@ -73,7 +74,6 @@ export function getAxisBalls(ballArray: Array<Ball>): Array<Ball> {
 		if (ball.parents) {
 			ball.parents.forEach((eachParentBall) => {
 				eachParentBall.forEach((parentBall) => {
-					// Since parentBall is now a Ball object, we access .name
 					if (!ballsToShow.includes(parentBall.name)) {
 						ballsToShow.push(parentBall.name);
 					}
@@ -91,17 +91,14 @@ export function getAxisBalls(ballArray: Array<Ball>): Array<Ball> {
 	return response;
 }
 
-export function getEvolutionBallFromParents(
-	parents: Array<string>,
-	evolutionBallArray: Array<Ball>
-) {
+// can be optimised
+export function getEvolutionBallFromParents(parents: Array<string>,	evolutionBallArray: Array<Ball>): Ball | undefined {
 	const parentCompare = JSON.stringify(parents.sort());
 	return evolutionBallArray.find((evolutionBall) => {
 		let doesMatch = false;
 		if (evolutionBall.parents && evolutionBall.parents.length) {
 			const length = evolutionBall.parents.length;
 			for (let i = 0; i < length; i++) {
-				// Map the Ball objects back to their names for comparison with the input strings
 				const parentNames = evolutionBall.parents[i].map((p) => p.name).sort();
 				const parentSet = JSON.stringify(parentNames);
 				if (parentSet == parentCompare) {
@@ -112,4 +109,20 @@ export function getEvolutionBallFromParents(
 		}
 		return doesMatch;
 	});
+}
+
+export function getBaseBallsForBall(deconstructBall: Ball, allBalls: Array<Ball>, upgradePath: number = 0): Array<Ball> {
+	const response: Array<Ball> = [];
+	if (deconstructBall.parents) {
+		const path: Array<Ball> = deconstructBall.parents[upgradePath];
+		while(path.length > 0){
+			const currentBall = path.pop();
+			if(currentBall && currentBall.parents && currentBall.parents.length > 0){
+				path.push(...currentBall.parents[upgradePath]);
+			} else if (currentBall && (currentBall.parents == undefined || currentBall.parents.length == 0)){
+				response.push(currentBall);
+			}
+		}
+	}
+	return response;
 }
