@@ -358,9 +358,18 @@
 					{#each childEvolutions as child, index (index)}
 						<button
 							onclick={() => selectNewBall(child)}
-							class="group flex items-center gap-2 rounded border border-indigo-500/10 bg-[#1a1a1e] px-3 py-1 sm:px-4 sm:py-2"
+							class="group flex items-center gap-2 rounded border border-indigo-500/10 bg-[#1a1a1e] px-3 py-1 transition-all hover:border-indigo-500/50 sm:px-4 sm:py-2"
 						>
-							<span class="text-[10px] font-bold text-indigo-300/70 uppercase sm:text-xs">
+							{#if child.img}
+								<img
+									src={child.img}
+									alt={child.name}
+									class="h-4 w-4 object-contain opacity-70 group-hover:opacity-100 sm:h-5 sm:w-5"
+								/>
+							{/if}
+							<span
+								class="text-[10px] font-bold text-indigo-300/70 uppercase group-hover:text-indigo-200 sm:text-xs"
+							>
 								{child.name}
 							</span>
 						</button>
