@@ -218,7 +218,7 @@
 			class="grid border border-indigo-900/30 bg-[#1a1a1e]"
 			style="grid-template-columns: repeat({gridSize}, 100px); gap: 1px;"
 		>
-			{#each Array(totalCells) as _, i}
+			{#each Array(totalCells) as _, i (i)}
 				{@const row = Math.floor(i / gridSize)}
 				{@const col = i % gridSize}
 				{@const cellBall = getBallAtCoord(row, col)}
@@ -254,7 +254,8 @@
 
 {#if showTooltip && selectedBall}
 	<aside
-		class="fixed right-4 bottom-4 left-4 z-50 flex min-h-[520px] flex-col overflow-hidden rounded-xl border border-indigo-500 bg-[#0f0f12] text-slate-200 shadow-[0_0_80px_rgba(99,102,241,0.5)] backdrop-blur-2xl sm:right-12 sm:bottom-12 sm:left-auto sm:w-[36rem]"
+		class="tooltip-container fixed right-4 bottom-4 left-4 z-50 flex min-h-[520px] origin-bottom flex-col overflow-hidden rounded-xl border border-indigo-500 bg-[#0f0f12] text-slate-200 shadow-[0_0_80px_rgba(99,102,241,0.5)] backdrop-blur-2xl transition-transform duration-300 ease-out
+		sm:right-12 sm:bottom-12 sm:left-auto sm:w-[36rem] sm:scale-100"
 	>
 		<div
 			class="relative flex h-[180px] flex-shrink-0 items-center justify-center border-b border-indigo-900/50 bg-gradient-to-b from-indigo-950/50 to-transparent p-10"
