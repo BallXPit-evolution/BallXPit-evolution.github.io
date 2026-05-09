@@ -271,7 +271,8 @@
 			{/if}
 			<div class="ml-28 flex flex-col items-center">
 				<h4
-					class="text-center text-3xl leading-none font-black tracking-[0.35em] text-indigo-400 uppercase"
+					class="text-center text-xl leading-none font-black tracking-[0.1em] text-indigo-400 uppercase
+						sm:text-3xl sm:tracking-[0.35em]"
 				>
 					{selectedBall.name}
 				</h4>
@@ -284,6 +285,8 @@
 			>
 		</div>
 
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
 			class="min-h-[140px] flex-grow cursor-pointer p-10 font-serif text-lg leading-relaxed text-slate-300 italic hover:bg-white/5"
 			onclick={() => (descExpanded = !descExpanded)}
@@ -302,44 +305,43 @@
 		</div>
 
 		{#if selectedBall.parents && selectedBall.parents.length > 0}
-			<div class="border-t border-indigo-900/30 bg-indigo-950/20 px-10 py-6">
-				<h5 class="mb-4 text-[10px] font-black tracking-[0.4em] text-indigo-500 uppercase">
+			<div class="border-t border-indigo-900/30 bg-indigo-950/20 px-4 py-4 sm:px-10 sm:py-6">
+				<h5
+					class="mb-3 text-[9px] font-black tracking-[0.3em] text-indigo-500 uppercase sm:mb-4 sm:text-[10px]"
+				>
 					Fusion Recipes
 				</h5>
-				<div class="flex flex-col gap-6">
-					{#each selectedBall.parents as recipe, recipeIndex}
-						<div class="flex flex-wrap items-center gap-3">
-							{#each recipe as parentBall, i}
-								<div class="flex items-center gap-3">
-									<button
-										onclick={() => selectNewBall(parentBall)}
-										class="group flex items-center gap-2 rounded border border-indigo-500/30 bg-[#1a1a1e] px-4 py-2 transition-all hover:border-indigo-500 hover:bg-indigo-500/10"
-									>
-										{#if parentBall.img}
-											<img
-												src={parentBall.img}
-												alt={parentBall.name}
-												class="h-5 w-5 object-contain"
-											/>
-										{/if}
-										<span class="text-xs font-bold text-indigo-200 uppercase"
-											>{parentBall.name}</span
-										>
-									</button>
-									{#if i < recipe.length - 1}
-										<span class="text-xl font-light text-indigo-500">+</span>
+				<div class="flex flex-col gap-3 sm:gap-6">
+					{#each selectedBall.parents as recipe, recipeIndex (recipeIndex)}
+						<div class="flex items-center gap-2 sm:gap-3">
+							{#each recipe as parentBall, i (i)}
+								<button
+									onclick={() => selectNewBall(parentBall)}
+									class="group flex items-center gap-2 rounded border border-indigo-500/20 bg-[#1a1a1e] px-2 py-1.5 transition-all hover:border-indigo-500 sm:px-4 sm:py-2"
+								>
+									{#if parentBall.img}
+										<img
+											src={parentBall.img}
+											alt={parentBall.name}
+											class="h-4 w-4 object-contain sm:h-5 sm:w-5"
+										/>
 									{/if}
-								</div>
+									<span class="text-[10px] font-bold text-indigo-200 uppercase sm:text-xs">
+										{parentBall.name}
+									</span>
+								</button>
+
+								{#if i < recipe.length - 1}
+									<span class="text-lg font-light text-indigo-500/50 sm:text-xl">+</span>
+								{/if}
 							{/each}
 						</div>
+
 						{#if recipeIndex < selectedBall.parents.length - 1}
-							<div class="relative flex items-center py-2">
-								<div class="flex-grow border-t border-indigo-500/10"></div>
-								<span
-									class="mx-4 flex-shrink text-[9px] font-black tracking-widest text-indigo-900 uppercase"
-									>OR</span
-								>
-								<div class="flex-grow border-t border-indigo-500/10"></div>
+							<div class="flex items-center">
+								<div class="h-px flex-1 bg-indigo-500/10"></div>
+								<span class="px-2 text-[8px] font-black text-indigo-900 uppercase">OR</span>
+								<div class="h-px flex-1 bg-indigo-500/10"></div>
 							</div>
 						{/if}
 					{/each}
@@ -348,27 +350,19 @@
 		{/if}
 
 		{#if childEvolutions.length > 0}
-			<div class="border-t border-indigo-900/30 bg-indigo-950/10 px-10 py-6">
-				<h5 class="mb-4 text-[10px] font-black tracking-[0.4em] text-indigo-400 uppercase">
+			<div class="border-t border-indigo-900/30 bg-indigo-950/10 px-4 py-4 sm:px-10 sm:py-6">
+				<h5 class="mb-3 text-[9px] font-black tracking-[0.3em] text-indigo-400 uppercase">
 					Used In Evolutions
 				</h5>
-				<div class="flex flex-wrap items-center gap-3">
-					{#each childEvolutions as child}
+				<div class="flex flex-wrap items-center gap-2 sm:gap-3">
+					{#each childEvolutions as child, index (index)}
 						<button
 							onclick={() => selectNewBall(child)}
-							class="group flex items-center gap-2 rounded border border-indigo-500/10 bg-[#1a1a1e] px-4 py-2 transition-all hover:border-indigo-500/50 hover:bg-indigo-500/5"
+							class="group flex items-center gap-2 rounded border border-indigo-500/10 bg-[#1a1a1e] px-3 py-1 sm:px-4 sm:py-2"
 						>
-							{#if child.img}
-								<img
-									src={child.img}
-									alt={child.name}
-									class="h-5 w-5 object-contain opacity-70 group-hover:opacity-100"
-								/>
-							{/if}
-							<span
-								class="text-xs font-bold text-indigo-300/70 uppercase group-hover:text-indigo-200"
-								>{child.name}</span
-							>
+							<span class="text-[10px] font-bold text-indigo-300/70 uppercase sm:text-xs">
+								{child.name}
+							</span>
 						</button>
 					{/each}
 				</div>
@@ -385,7 +379,7 @@
 				<div class="h-px flex-1 bg-indigo-900/30"></div>
 			</div>
 
-			{#each selectedBall.damageType as type}
+			{#each selectedBall.damageType as type, index (index)}
 				<span
 					class="rounded border border-indigo-500/20 bg-indigo-950/40 px-4 py-2 text-xs font-black tracking-[0.2em] text-indigo-300 uppercase"
 				>
@@ -394,7 +388,7 @@
 			{/each}
 
 			{#if selectedBall.statusEffect && selectedBall.statusEffect.length > 0}
-				{#each selectedBall.statusEffect as effect}
+				{#each selectedBall.statusEffect as effect, index (index)}
 					<span
 						class="rounded border border-emerald-500/20 bg-emerald-950/40 px-4 py-2 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase"
 					>
