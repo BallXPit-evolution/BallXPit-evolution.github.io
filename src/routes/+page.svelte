@@ -9,7 +9,7 @@
 	} from '$lib/utils/balls';
 	import ballData from '$lib/json/balls.json';
 	import { loadCompletion } from '$lib/utils/completion';
-	import ImageRenderer from '$lib/components/ImageRenderer.svelte';
+	import GridRenderer from '$lib/components/GridRenderer.svelte';
 	import { browser } from '$app/environment';
 
 	// Initialize balls and resolve references
@@ -245,7 +245,7 @@
 							<span class="text-[10px] font-bold tracking-widest text-indigo-500/20">AXIS</span>
 						{:else if cellBall && cellBall.img}
 
-							<ImageRenderer cellBall={cellBall} row={row} col={col} isCollected={isBallInCollection(cellBall)} />
+							<GridRenderer cellBall={cellBall} row={row} col={col} isCollected={isBallInCollection(cellBall)} />
 
 						{:else if row == col}
 							<div class="opacity-10 transition-opacity group-hover:opacity-40">
