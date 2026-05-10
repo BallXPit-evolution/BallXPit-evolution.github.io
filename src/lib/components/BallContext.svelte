@@ -42,18 +42,18 @@
     sm:right-12 sm:bottom-12 sm:left-auto sm:w-xl sm:scale-100"
 >
     <div
-        class="relative flex h-45 shrink-0 items-center justify-center border-b border-indigo-900/50 bg-linear-to-b from-indigo-950/50 to-transparent p-10"
+        class="relative flex h-35 shrink-0 items-center justify-center border-b border-indigo-900/50 bg-linear-to-b from-indigo-950/50 to-transparent py-2 px-4"
     >
         {#if selectedBall.img}
-            <div class="absolute top-1/2 left-10 -translate-y-1/2">
+            <div class="absolute top-1/2 left-5 -translate-y-1/2">
                 <img
                     src={selectedBall.img}
                     alt={selectedBall.name}
-                    class="h-28 w-28 rounded-full border-2 border-indigo-400 bg-[#050507] object-contain p-2"
+                    class="h-28 w-28 rounded-full border-2 border-indigo-400 bg-[#050507] object-contain"
                 />
             </div>
         {/if}
-        <div class="ml-28 flex flex-col items-center">
+        <div class="ml-24 flex flex-col items-center">
             <h4
                 class="text-center text-xl leading-none font-black tracking-widest text-indigo-400 uppercase
                     sm:text-3xl sm:tracking-[0.35em]"
@@ -72,7 +72,7 @@
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div
-        class="cursor-pointer p-2 font-serif text-lg leading-relaxed text-slate-300 italic hover:bg-white/5"
+        class="cursor-pointer font-serif text-lg leading-relaxed text-slate-300 italic hover:bg-white/5 py-2 px-4"
         onclick={() => (descExpanded = !descExpanded)}
     >
         <div class="z-10">
@@ -81,7 +81,7 @@
     </div>
 
     {#if selectedBall.parents && selectedBall.parents.length > 0}
-        <div class="border-t border-indigo-900/30 bg-indigo-950/20 p-2">
+        <div class="border-t border-indigo-900/30 bg-indigo-950/20 py-2 px-4">
             <h5
                 class="text-[9px] font-black tracking-[0.3em] text-indigo-500 uppercase sm:text-[10px]"
             >
@@ -127,7 +127,7 @@
     {/if}
 
     {#if childEvolutions.length > 0}
-        <div class="border-t border-indigo-900/30 bg-indigo-950/10 p-2">
+        <div class="border-t border-indigo-900/30 bg-indigo-950/10 py-2 px-4">
             <h5 class="mb-3 text-[9px] font-black tracking-[0.3em] text-indigo-400 uppercase">
                 Used In Evolutions
             </h5>
@@ -157,13 +157,12 @@
 
     {#if (selectedBall.statusEffect && selectedBall.statusEffect.length > 0) || selectedBall.damageType.length > 0}
         <div
-            class="flex shrink-0 flex-wrap border-t border-indigo-900/50 bg-[#050507]/80 p-2"
+            class="flex shrink-0 flex-wrap border-t border-indigo-900/50 bg-[#050507]/80 py-2 px-4"
         >
             <div class="mb-1 flex w-full items-center gap-2">
                 <span class="text-[10px] font-black tracking-[0.4em] text-indigo-500 uppercase"
                     >Element Profile</span
                 >
-                <div class="h-px flex-1 bg-indigo-900/30"></div>
             </div>
 
             {#each selectedBall.damageType as type, index (index)}
