@@ -38,7 +38,7 @@
 
 
 <aside
-    class="tooltip-container fixed right-4 bottom-4 left-4 z-50 flex min-h-130 origin-bottom flex-col overflow-hidden rounded-xl border border-indigo-500 bg-[#0f0f12] text-slate-200 shadow-[0_0_80px_rgba(99,102,241,0.5)] backdrop-blur-2xl transition-transform duration-300 ease-out
+    class="tooltip-container fixed right-4 bottom-4 left-4 z-50 flex origin-bottom flex-col overflow-hidden rounded-xl border border-indigo-500 bg-[#0f0f12] text-slate-200 shadow-[0_0_80px_rgba(99,102,241,0.5)] backdrop-blur-2xl transition-transform duration-300 ease-out
     sm:right-12 sm:bottom-12 sm:left-auto sm:w-xl sm:scale-100"
 >
     <div
@@ -72,7 +72,7 @@
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div
-        class="grow cursor-pointer p-2 font-serif text-lg leading-relaxed text-slate-300 italic hover:bg-white/5"
+        class="cursor-pointer p-2 font-serif text-lg leading-relaxed text-slate-300 italic hover:bg-white/5"
         onclick={() => (descExpanded = !descExpanded)}
     >
         <div class="z-10">
@@ -120,6 +120,7 @@
                             <div class="h-px flex-1 bg-indigo-500/10"></div>
                         </div>
                     {/if}
+
                 {/each}
             </div>
         </div>
@@ -154,32 +155,34 @@
         </div>
     {/if}
 
-    <div
-        class="flex shrink-0 flex-wrap border-t border-indigo-900/50 bg-[#050507]/80 p-2"
-    >
-        <div class="mb-1 flex w-full items-center gap-2">
-            <span class="text-[10px] font-black tracking-[0.4em] text-indigo-500 uppercase"
-                >Element Profile</span
-            >
-            <div class="h-px flex-1 bg-indigo-900/30"></div>
-        </div>
-
-        {#each selectedBall.damageType as type, index (index)}
-            <span
-                class="rounded border border-indigo-500/20 bg-indigo-950/40 px-4 py-2 text-xs font-black tracking-[0.2em] text-indigo-300 uppercase mr-2"
-            >
-                {type}
-            </span>
-        {/each}
-
-        {#if selectedBall.statusEffect && selectedBall.statusEffect.length > 0}
-            {#each selectedBall.statusEffect as effect, index (index)}
-                <span
-                    class="rounded border border-emerald-500/20 bg-emerald-950/40 px-4 py-2 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase"
+    {#if (selectedBall.statusEffect && selectedBall.statusEffect.length > 0) || selectedBall.damageType.length > 0}
+        <div
+            class="flex shrink-0 flex-wrap border-t border-indigo-900/50 bg-[#050507]/80 p-2"
+        >
+            <div class="mb-1 flex w-full items-center gap-2">
+                <span class="text-[10px] font-black tracking-[0.4em] text-indigo-500 uppercase"
+                    >Element Profile</span
                 >
-                    {effect}
+                <div class="h-px flex-1 bg-indigo-900/30"></div>
+            </div>
+
+            {#each selectedBall.damageType as type, index (index)}
+                <span
+                    class="rounded border border-indigo-500/20 bg-indigo-950/40 px-4 py-2 text-xs font-black tracking-[0.2em] text-indigo-300 uppercase mr-2"
+                >
+                    {type}
                 </span>
             {/each}
-        {/if}
-    </div>
+
+            {#if selectedBall.statusEffect && selectedBall.statusEffect.length > 0}
+                {#each selectedBall.statusEffect as effect, index (index)}
+                    <span
+                        class="rounded border border-emerald-500/20 bg-emerald-950/40 px-4 py-2 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase"
+                    >
+                        {effect}
+                    </span>
+                {/each}
+            {/if}
+        </div>
+    {/if}
 </aside>
