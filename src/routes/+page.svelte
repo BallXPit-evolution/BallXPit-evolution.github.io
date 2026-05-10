@@ -208,7 +208,16 @@
 		const filtered = collection.filter(b => b.name == ball.name);
 		return filtered.length > 0;
 	}
+
+	function onKeyDown(event: KeyboardEvent) {
+		if (event.key === "Escape") {
+			showTooltip = false;
+		}
+	}
+
 </script>
+
+<svelte:window on:keydown={onKeyDown} />
 
 <div class="flex-1 relative overflow-hidden z-1">
 	<div
@@ -267,11 +276,11 @@
 
 	{#if showTooltip && selectedBall}
 		<aside
-			class="tooltip-container fixed right-4 bottom-4 left-4 z-50 flex min-h-[520px] origin-bottom flex-col overflow-hidden rounded-xl border border-indigo-500 bg-[#0f0f12] text-slate-200 shadow-[0_0_80px_rgba(99,102,241,0.5)] backdrop-blur-2xl transition-transform duration-300 ease-out
-			sm:right-12 sm:bottom-12 sm:left-auto sm:w-[36rem] sm:scale-100"
+			class="tooltip-container fixed right-4 bottom-4 left-4 z-50 flex min-h-130 origin-bottom flex-col overflow-hidden rounded-xl border border-indigo-500 bg-[#0f0f12] text-slate-200 shadow-[0_0_80px_rgba(99,102,241,0.5)] backdrop-blur-2xl transition-transform duration-300 ease-out
+			sm:right-12 sm:bottom-12 sm:left-auto sm:w-xl sm:scale-100"
 		>
 			<div
-				class="relative flex h-[180px] flex-shrink-0 items-center justify-center border-b border-indigo-900/50 bg-gradient-to-b from-indigo-950/50 to-transparent p-10"
+				class="relative flex h-45 shrink-0 items-center justify-center border-b border-indigo-900/50 bg-linear-to-b from-indigo-950/50 to-transparent p-10"
 			>
 				{#if selectedBall.img}
 					<div class="absolute top-1/2 left-10 -translate-y-1/2">
@@ -284,7 +293,7 @@
 				{/if}
 				<div class="ml-28 flex flex-col items-center">
 					<h4
-						class="text-center text-xl leading-none font-black tracking-[0.1em] text-indigo-400 uppercase
+						class="text-center text-xl leading-none font-black tracking-widest text-indigo-400 uppercase
 							sm:text-3xl sm:tracking-[0.35em]"
 					>
 						{selectedBall.name}
@@ -301,7 +310,7 @@
 			<!-- svelte-ignore a11y_click_events_have_key_events -->
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<div
-				class="min-h-[140px] flex-grow cursor-pointer p-10 font-serif text-lg leading-relaxed text-slate-300 italic hover:bg-white/5"
+				class="min-h-35 grow cursor-pointer p-10 font-serif text-lg leading-relaxed text-slate-300 italic hover:bg-white/5"
 				onclick={() => (descExpanded = !descExpanded)}
 			>
 				<div class="relative z-10 px-4">
@@ -392,7 +401,7 @@
 			{/if}
 
 			<div
-				class="flex flex-shrink-0 flex-wrap gap-4 border-t border-indigo-900/50 bg-[#050507]/80 p-8"
+				class="flex shrink-0 flex-wrap gap-4 border-t border-indigo-900/50 bg-[#050507]/80 p-8"
 			>
 				<div class="mb-1 flex w-full items-center gap-2">
 					<span class="text-[10px] font-black tracking-[0.4em] text-indigo-500 uppercase"
