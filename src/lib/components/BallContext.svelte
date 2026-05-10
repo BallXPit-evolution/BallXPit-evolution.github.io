@@ -49,7 +49,7 @@
                 <img
                     src={selectedBall.img}
                     alt={selectedBall.name}
-                    class="h-28 w-28 rounded-full border-2 border-indigo-400 bg-[#050507] object-contain"
+                    class="h-28 w-28 rounded-full border-2 border-indigo-400 bg-[#241b1e] object-contain"
                 />
             </div>
         {/if}
