@@ -189,7 +189,7 @@
 			} else {
 				selectedBall = {
 					name: '404 Evolution',
-					description: `The combination of ${parent1} and ${parent2} is unknown, it might not exist. Maybe this is what destroyed Babylon...?`,
+					description: `The combination of ${parent1} and ${parent2} is unknown. Maybe this is what destroyed Babylon...?`,
 					img: '',
 					damageType: ['Null'],
 					statusEffect: ['None']
