@@ -249,7 +249,7 @@
 			</div>
 
 			<div
-				class="pointer-events-auto absolute top-0 left-full ml-12 w-[350px] border border-indigo-900/40 bg-[#0b0b0e] p-6 shadow-2xl"
+				class="pointer-events-auto absolute top-0 left-full ml-12 w-87.5 border border-indigo-900/40 bg-[#0b0b0e] p-6 shadow-2xl"
 				style="max-height: {gridSize * 100}px; overflow-y: auto;"
 			>
 				<div class="mb-6">
@@ -285,7 +285,7 @@
 									{ball.name}
 								</span>
 								<span class="text-[10px] font-black tracking-widest text-indigo-500/60 uppercase">
-									{ball.parents.find((r) => r.length >= 3)?.length || 0} COMPONENTS
+									{ball.parents?.find((r) => r.length >= 3)?.length || 0} COMPONENTS
 								</span>
 							</div>
 						</button>
