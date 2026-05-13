@@ -183,7 +183,7 @@
 			} else {
 				selectedBall = {
 					name: '404 Evolution',
-					description: `The combination of ${parent1} and ${parent2} is unknown. Maybe this is what cause your parents to divorce...?`,
+					description: `The combination of ${parent1} and ${parent2} is unknown.`,
 					img: '',
 					damageType: []
 				};

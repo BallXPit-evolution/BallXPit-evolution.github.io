@@ -2,10 +2,12 @@
 	import { getBaseBalls, type Ball } from '$lib/utils/balls';
 	import { onMount, tick } from 'svelte';
 
-	let { allBalls, selectedBall, onSelectBall } = $props<{
+	let { allBalls, selectedBall, onSelectBall, scale } = $props<{
+		// Added scale
 		allBalls: Ball[];
 		selectedBall: Ball | null;
 		onSelectBall: (ball: Ball | null) => void;
+		scale: number; // New prop
 	}>();
 
 	const layout = {
@@ -123,11 +125,14 @@
 		if (!container) return;
 		const parentRect = container.getBoundingClientRect();
 		const newCoords = new Map();
+
 		container.querySelectorAll('[data-ball-name]').forEach((el) => {
 			const rect = el.getBoundingClientRect();
+			// Divide the relative distance by the current scale
+			// to get the un-scaled coordinate position.
 			newCoords.set(el.getAttribute('data-ball-name')!, {
-				x: rect.left - parentRect.left + rect.width / 2,
-				y: rect.top - parentRect.top + rect.height / 2
+				x: (rect.left - parentRect.left + rect.width / 2) / scale,
+				y: (rect.top - parentRect.top + rect.height / 2) / scale
 			});
 		});
 		coords = newCoords;

@@ -15,6 +15,10 @@
 		{
 			name: 'Collection',
 			link: '/collection' as Href
+		},
+		{
+			name: 'Tree',
+			link: '/tree' as Href
 		}
 	];
 
