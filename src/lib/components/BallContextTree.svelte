@@ -2,13 +2,15 @@
 	import type { Ball } from '$lib/utils/balls';
 
 	let {
-		selectedBall,
+		selectedBall = $bindable(), // Make this bindable or use the callback
 		showTooltip = $bindable(),
-		allBalls
+		allBalls,
+		onSelectBall // Add this prop to notify the parent
 	}: {
 		selectedBall: Ball;
 		showTooltip: boolean;
 		allBalls: Array<Ball>;
+		onSelectBall: (ball: Ball) => void;
 	} = $props();
 
 	const DESC_LIMIT = 100;
@@ -30,6 +32,7 @@
 	});
 
 	function selectNewBall(ball: Ball) {
+		onSelectBall(ball);
 		selectedBall = ball;
 		descExpanded = false;
 	}
