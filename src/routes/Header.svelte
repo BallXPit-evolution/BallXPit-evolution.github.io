@@ -8,10 +8,10 @@
 			name: "Ball Evolutions",
 			link: "/" as Href,
 		},
-		{
-			name: "Passive Evolutions",
-			link: "/passives" as Href,
-		},
+		// {
+		// 	name: "Passive Evolutions",
+		// 	link: "/passives" as Href,
+		// },
 		{
 			name: "Collection",
 			link: "/collection" as Href,
