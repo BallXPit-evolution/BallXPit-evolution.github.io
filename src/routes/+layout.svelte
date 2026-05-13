@@ -7,15 +7,15 @@
 	let { children } = $props();
 
 	onMount(() => {
-		if(browser){
-			console.log("pre-passives build")
+		if (browser) {
+			console.log('version 1.0');
 		}
-	})
+	});
 </script>
 
 <div class="app flex h-screen flex-col">
 	<Header />
-	<main class="flex-1 overflow-y-auto overflow-x-hidden">
+	<main class="flex-1 overflow-x-hidden overflow-y-auto">
 		{@render children()}
 	</main>
 </div>
