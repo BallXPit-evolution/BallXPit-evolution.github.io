@@ -61,7 +61,7 @@
 			class="flex w-full items-center justify-between rounded border bg-white px-3 py-2 text-black"
 			onclick={() => (open = !open)}
 		>
-			<span>{selected ?? 'Select a Ball'}</span>
+			<span>{selected ?? 'Select an Option'}</span>
 			<span>▾</span>
 		</button>
 
@@ -71,7 +71,7 @@
 				<!-- search -->
 				<input
 					class="w-full border-b px-3 py-2 outline-none"
-					placeholder="Search Ball..."
+					placeholder="Search List..."
 					bind:value={query}
 				/>
 
