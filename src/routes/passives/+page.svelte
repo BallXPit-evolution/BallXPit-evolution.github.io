@@ -206,9 +206,9 @@
 
 <svelte:window on:keydown={onKeyDown} />
 
-<div class="relative z-1 flex-1 overflow-hidden bg-[#050507]">
+<div class="relative z-1 flex-1 bg-[#050507]">
 	<div
-		class="h-full w-full cursor-grab touch-none overflow-hidden select-none active:cursor-grabbing"
+		class="h-full w-full cursor-grab touch-none select-none active:cursor-grabbing"
 		onwheel={handleWheel}
 		onmousedown={onMouseDown}
 		onmousemove={onMouseMove}
