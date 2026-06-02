@@ -626,9 +626,9 @@
 		"description": "Applies 1 stack of disease to units it hits (max 8 stacks). Disease lasts for 6 seconds. Each stack of disease deals 3-6 damage per second and diseased units have a 15% chance of passing a stack to undiseased nearby enemies each second",
 		"img": "Virus.JPG",
 		"parents": [
-			["Poison", "Ghost"],
-			["Poison", "Cell"],
-			["Bleed", "Poison"]
+			["Bleed", "Poison"],
+			["Cell", "Poison"],
+			["Ghost", "Poison"]
 		],
 		"damageType": ["Base"],
 		"statusEffect": ["Disease"]
