@@ -669,14 +669,14 @@
 	
 	{
 		"name": "Flesh",
-		"description": "",
+		"description": "We'll add data about this ball once we've confirmed it exists",
 		"img": "",
 		"damageType": [ ],
 		"statusEffect": [ ]
 	},
 	{
 		"name": "Drill",
-		"description": "",
+		"description": "We'll add data about this ball once we've confirmed it exists",
 		"img": "",
 		"parents": [
 			[
@@ -689,7 +689,7 @@
 	},
 	{
 		"name": "Flesh Mound",
-		"description": "",
+		"description": "We'll add data about this ball once we've confirmed it exists",
 		"img": "",
 		"parents": [
 			[
@@ -702,7 +702,7 @@
 	},
 	{
 		"name": "Lightning Bug",
-		"description": "",
+		"description": "We'll add data about this ball once we've confirmed it exists",
 		"img": "",
 		"parents": [
 			[
@@ -715,7 +715,7 @@
 	},
 	{
 		"name": "Mosquito Kingdom",
-		"description": "",
+		"description": "We'll add data about this ball once we've confirmed it exists",
 		"img": "",
 		"parents": [
 			[
@@ -728,7 +728,7 @@
 	},
 	{
 		"name": "Offspring",
-		"description": "",
+		"description": "We'll add data about this ball once we've confirmed it exists",
 		"img": "",
 		"parents": [
 			[
@@ -741,7 +741,7 @@
 	},
 	{
 		"name": "Petrify",
-		"description": "",
+		"description": "We'll add data about this ball once we've confirmed it exists",
 		"img": "",
 		"parents": [
 			[
@@ -754,7 +754,7 @@
 	},
 	{
 		"name": "Tumor",
-		"description": "",
+		"description": "We'll add data about this ball once we've confirmed it exists",
 		"img": "",
 		"parents": [
 			[
@@ -767,7 +767,7 @@
 	},
 	{
 		"name": "Zombie",
-		"description": "",
+		"description": "We'll add data about this ball once we've confirmed it exists",
 		"img": "",
 		"parents": [
 			[
