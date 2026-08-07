@@ -1291,5 +1291,119 @@
 		"statusEffect": [
 			"Radiation"
 		]
+	},
+
+
+	
+	{
+		"name": "Flesh",
+		"description": "",
+		"img": "",
+		"damageType": [ ],
+		"statusEffect": [ ]
+	},
+	{
+		"name": "Drill",
+		"description": "",
+		"img": "",
+		"parents": [
+			[
+				"Earthquake",
+				"Stone"
+			]
+		],
+		"damageType": [ ],
+		"statusEffect": [ ]
+	},
+	{
+		"name": "Flesh Mound",
+		"description": "",
+		"img": "",
+		"parents": [
+			[
+				"Brood Mother",
+				"Flesh"
+			]
+		],
+		"damageType": [ ],
+		"statusEffect": [ ]
+	},
+	{
+		"name": "Lightning Bug",
+		"description": "",
+		"img": "",
+		"parents": [
+			[
+				"Brood Mother",
+				"Lightning"
+			]
+		],
+		"damageType": [ ],
+		"statusEffect": [ ]
+	},
+	{
+		"name": "Mosquito Kingdom",
+		"description": "",
+		"img": "",
+		"parents": [
+			[
+				"Mosquito King",
+				"Mosquito Swarm"
+			]
+		],
+		"damageType": [ ],
+		"statusEffect": [ ]
+	},
+	{
+		"name": "Offspring",
+		"description": "",
+		"img": "",
+		"parents": [
+			[
+				"Cell",
+				"Flesh"
+			]
+		],
+		"damageType": [ ],
+		"statusEffect": [ ]
+	},
+	{
+		"name": "Petrify",
+		"description": "",
+		"img": "",
+		"parents": [
+			[
+				"Flesh",
+				"Stone"
+			]
+		],
+		"damageType": [ ],
+		"statusEffect": [ ]
+	},
+	{
+		"name": "Tumor",
+		"description": "",
+		"img": "",
+		"parents": [
+			[
+				"Radiation Beam",
+				"Flesh"
+			]
+		],
+		"damageType": [ ],
+		"statusEffect": [ ]
+	},
+	{
+		"name": "Zombie",
+		"description": "",
+		"img": "",
+		"parents": [
+			[
+				"Vampire",
+				"Flesh"
+			]
+		],
+		"damageType": [ ],
+		"statusEffect": [ ]
 	}
 ]

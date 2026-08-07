@@ -10,11 +10,11 @@ export interface Ball {
 	statusEffect?: Array<string>;
 }
 
-export function createBall(data: any): Ball {
+export function createBall(data: any, isBall: boolean = true): Ball {
 	return {
 		name: String(data.name),
 		description: String(data.description),
-		img: data.img ? String(data.img) : "",
+		img: data.img ? String(data.img) : (isBall ? "Missing Ball Img.JPG" : "Missing Item Img.JPG"),
 		// Note: data.parents from raw JSON is likely still strings.
 		// These will need to be resolved to Ball objects to satisfy the interface.
 		parents: data.parents ? data.parents : undefined,
@@ -24,13 +24,13 @@ export function createBall(data: any): Ball {
 	};
 }
 
-export function createAllBalls(dataArray: Array<any>): Array<Ball> {
+export function createAllBalls(dataArray: Array<any>, isBall: boolean = true): Array<Ball> {
 	// 1. Create a Map for quick lookup by name
 	const ballMap = new Map<string, Ball>();
 
 	// 2. Initialize all balls (first pass)
 	const allBalls = dataArray.map((data) => {
-		const ball = createBall(data);
+		const ball = createBall(data, isBall);
 		ballMap.set(ball.name, ball);
 		return ball;
 	});

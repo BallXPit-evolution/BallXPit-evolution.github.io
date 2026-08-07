@@ -14,7 +14,7 @@
 	import BallContext from '$lib/components/BallContext.svelte';
 
 	// Initialize balls and resolve references
-	const allBalls = createAllBalls(ballData);
+	const allBalls = createAllBalls(ballData, false);
 	let collection: Array<Ball> = $state([]);
 	let baseBalls = $derived(getAxisBalls(allBalls));
 	let evolutionBalls = $derived(getEvolutionBalls(allBalls));
