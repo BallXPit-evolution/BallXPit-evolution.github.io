@@ -88,14 +88,14 @@
 		"description": "Deals 9-18 damage to all enemies in the same row.",
 		"img": "Laser (Horizontal).JPG",
 		"unlockRequirement": "Unlocked by default",
-		"damageType": ["AOE"]
+		"damageType": ["Base", "AOE"]
 	},
 	{
 		"name": "Laser (Vertical)",
 		"description": "Deals 9-18 damage to all enemies in the same column.",
 		"img": "Laser (Vertical).JPG",
 		"unlockRequirement": "Unlocked by default",
-		"damageType": ["AOE"]
+		"damageType": ["Base", "AOE"]
 	},
 	{
 		"name": "Light",
@@ -110,7 +110,7 @@
 		"description": "Deals 1-20 damage to up to 3 nearby enemies.",
 		"img": "Lightning.JPG",
 		"unlockRequirement": "Unlocked by default",
-		"damageType": ["AOE"]
+		"damageType": ["Base", "AOE"]
 	},
 	{
 		"name": "Stone",
@@ -665,117 +665,87 @@
 		"statusEffect": ["Radiation"]
 	},
 
-
-	
 	{
 		"name": "Flesh",
-		"description": "We'll add data about this ball once we've confirmed it exists",
+		"description": "Speed increases by 25% per bounce.",
 		"img": "",
-		"damageType": [ ],
-		"statusEffect": [ ]
+		"damageType": ["Base"]
 	},
 	{
 		"name": "Drill",
-		"description": "We'll add data about this ball once we've confirmed it exists",
+		"description": "Pierces enemies and deals 50% bonus damage until reaching the back of the field.",
 		"img": "",
-		"parents": [
-			[
-				"Earthquake",
-				"Stone"
-			]
-		],
-		"damageType": [ ],
-		"statusEffect": [ ]
+		"parents": [["Earthquake", "Iron"]],
+		"damageType": ["Base"]
 	},
 	{
 		"name": "Flesh Mound",
-		"description": "We'll add data about this ball once we've confirmed it exists",
+		"description": "Emits a fleshu baby ball in a random direction every 1.0 seconds.",
 		"img": "",
-		"parents": [
-			[
-				"Brood Mother",
-				"Flesh"
-			]
-		],
-		"damageType": [ ],
-		"statusEffect": [ ]
+		"parents": [["Brood Mother", "Flesh"]],
+		"damageType": ["Base"]
 	},
 	{
 		"name": "Lightning Bug",
-		"description": "We'll add data about this ball once we've confirmed it exists",
+		"description": "Spawns a lightning bug each time it hits an enemy. Lightning bugs attack a random enemy, dealing 1-80 damage to up to 3 nearby enemies.",
 		"img": "",
-		"parents": [
-			[
-				"Brood Mother",
-				"Lightning"
-			]
-		],
-		"damageType": [ ],
-		"statusEffect": [ ]
+		"parents": [["Brood Mother", "Lightning"]],
+		"damageType": ["Base", "AOE"]
 	},
 	{
 		"name": "Mosquito Kingdom",
-		"description": "We'll add data about this ball once we've confirmed it exists",
+		"description": "Spawns 1-2 mosquiteos each time it hits an enemy. Mosquitos attack a random enemy, dealing 100-150 damage each. If a mosquito kills an enemy, they steal 2 health.",
 		"img": "",
-		"parents": [
-			[
-				"Mosquito King",
-				"Mosquito Swarm"
-			]
-		],
-		"damageType": [ ],
-		"statusEffect": [ ]
+		"parents": [["Mosquito King", "Mosquito Swarm"]],
+		"damageType": ["Base"],
+		"statusEffect": ["Mosquito Spawn", "Lifesteal"]
 	},
 	{
 		"name": "Offspring",
-		"description": "We'll add data about this ball once we've confirmed it exists",
+		"description": "Splits into a clone on hit 4 times.",
 		"img": "",
-		"parents": [
-			[
-				"Cell",
-				"Flesh"
-			]
-		],
-		"damageType": [ ],
-		"statusEffect": [ ]
+		"parents": [["Cell", "Flesh"]],
+		"damageType": ["Base"],
+		"statusEffect": ["Clone"]
 	},
 	{
 		"name": "Petrify",
-		"description": "We'll add data about this ball once we've confirmed it exists",
+		"description": "Petrifies all enemies within its sightline for 1.5 seconds when first launched, dealing 50-120 damage.",
 		"img": "",
-		"parents": [
-			[
-				"Flesh",
-				"Stone"
-			]
-		],
-		"damageType": [ ],
-		"statusEffect": [ ]
+		"parents": [["Flesh", "Stone"]],
+		"damageType": ["Base"]
 	},
 	{
 		"name": "Tumor",
-		"description": "We'll add data about this ball once we've confirmed it exists",
+		"description": "Applies tumor on hit. Enemies with a tumor die after 40 seconds (except for bosses).",
 		"img": "",
-		"parents": [
-			[
-				"Radiation Beam",
-				"Flesh"
-			]
-		],
-		"damageType": [ ],
-		"statusEffect": [ ]
+		"parents": [["Radiation Beam", "Flesh"]],
+		"damageType": ["Base"],
+		"statusEffect": ["Tumor"]
 	},
 	{
 		"name": "Zombie",
+		"description": "Infects enemies on hit, giving them a 40% chance to turn into a friendly zombie on death.",
+		"img": "",
+		"parents": [["Vampire", "Flesh"]],
+		"damageType": ["Base"],
+		"statusEffect": ["Friendly"]
+	},
+
+	{
+		"name": "Elemental",
+		"description": "Applies a random status effect (burn, slow or freeze) to nearby enemies on hit.",
+		"img": "",
+		"parents": [["Fire", "Wind", "Ice", "Earthquake"]],
+		"damageType": ["Base", "AOE"],
+		"statusEffect": ["Burn", "Slow", "Freeze"]
+	},
+	{
+		"name": "Armageddon",
 		"description": "We'll add data about this ball once we've confirmed it exists",
 		"img": "",
-		"parents": [
-			[
-				"Vampire",
-				"Flesh"
-			]
-		],
-		"damageType": [ ],
-		"statusEffect": [ ]
+		"parents": [["Inferno", "Storm"]],
+		"damageType": ["Base"],
+		"statusEffect": ["Burn", "AOE"]
 	}
 ]

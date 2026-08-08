@@ -491,5 +491,62 @@
 		"parents": [["Radiant Feather", "Fleet Feet"]],
 		"damageType": [],
 		"statusEffect": ["Movement Speed"]
+	},
+
+	{
+		"name": "",
+		"description": "We'll add data about this passive once we've confirmed it exists",
+		"img": "",
+		"parents": [["", ""]],
+		"damageType": [],
+		"statusEffect": [""]
+	},
+	{
+		"name": "Platinum Dumbbell",
+		"description": "Balls deal 12% bonus damage until they hit the back of the field.",
+		"img": "",
+		"damageType": [],
+		"statusEffect": []
+	},
+	{
+		"name": "",
+		"description": "We'll add data about this passive once we've confirmed it exists",
+		"img": "",
+		"parents": [["", ""]],
+		"damageType": [],
+		"statusEffect": []
+	},
+
+	{
+		"name": "Ardent Tire",
+		"description": "Each bounce increases ball speed by 10% and damage by 5%.",
+		"img": "",
+		"parents": [["Wagon Wheel", "Rubber Headband"]],
+		"damageType": [],
+		"statusEffect": []
+	},
+	{
+		"name": "Inglorious Hammer",
+		"description": "When balls hit a wall or the back of the field, they hit a random enemy with 50% bonus damage.",
+		"img": "",
+		"parents": [["Platinum Dumbbell", "Upturned Hatchet"]],
+		"damageType": [],
+		"statusEffect": []
+	},
+	{
+		"name": "Remote Detonator",
+		"description": "Enemies spawn a level 1 bomb ball upon dying.",
+		"img": "",
+		"parents": [["Magnet", "Pressure Valve"]],
+		"damageType": ["AOE"],
+		"statusEffect": [""]
+	},
+	{
+		"name": "Windweaver",
+		"description": "We'll add data about this passive once we've confirmed it exists",
+		"img": "",
+		"parents": [["Bottled Tornado", "Slingshot"]],
+		"damageType": [],
+		"statusEffect": [""]
 	}
 ]
