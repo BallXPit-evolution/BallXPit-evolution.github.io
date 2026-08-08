@@ -496,7 +496,7 @@
 	{
 		"name": "Platinum Dumbbell",
 		"description": "Balls deal 12% bonus damage until they hit the back of the field.",
-		"img": "",
+		"img": "Platinum Dumbbell.JPG",
 		"damageType": [],
 		"statusEffect": []
 	},
@@ -504,7 +504,7 @@
 	{
 		"name": "Ardent Tire",
 		"description": "Each bounce increases ball speed by 10% and damage by 5%.",
-		"img": "",
+		"img": "Ardent Tire.JPG",
 		"parents": [["Wagon Wheel", "Rubber Headband"]],
 		"damageType": [],
 		"statusEffect": []
@@ -512,7 +512,7 @@
 	{
 		"name": "Inglorious Hammer",
 		"description": "When balls hit a wall or the back of the field, they hit a random enemy with 50% bonus damage.",
-		"img": "",
+		"img": "Inglorious Hammer.JPG",
 		"parents": [["Platinum Dumbbell", "Upturned Hatchet"]],
 		"damageType": [],
 		"statusEffect": []
@@ -520,7 +520,7 @@
 	{
 		"name": "Remote Detonator",
 		"description": "Enemies spawn a level 1 bomb ball upon dying.",
-		"img": "",
+		"img": "Remote Detonator.JPG",
 		"parents": [["Magnet", "Pressure Valve"]],
 		"damageType": ["AOE"],
 		"statusEffect": []
@@ -528,7 +528,7 @@
 	{
 		"name": "Windweaver",
 		"description": "Shoot a level 1 wind ball every time you pick up a gem.",
-		"img": "",
+		"img": "Windweaver.JPG",
 		"parents": [["Bottled Tornado", "Slingshot"]],
 		"damageType": ["Base"],
 		"statusEffect": []

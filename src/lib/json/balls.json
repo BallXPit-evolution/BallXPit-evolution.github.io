@@ -668,34 +668,34 @@
 	{
 		"name": "Flesh",
 		"description": "Speed increases by 25% per bounce.",
-		"img": "",
+		"img": "Flesh.JPG",
 		"damageType": ["Base"]
 	},
 	{
 		"name": "Drill",
 		"description": "Pierces enemies and deals 50% bonus damage until reaching the back of the field.",
-		"img": "",
+		"img": "Drill.JPG",
 		"parents": [["Earthquake", "Iron"]],
 		"damageType": ["Base"]
 	},
 	{
 		"name": "Flesh Mound",
 		"description": "Emits a fleshu baby ball in a random direction every 1.0 seconds.",
-		"img": "",
+		"img": "Flesh Mound.JPG",
 		"parents": [["Brood Mother", "Flesh"]],
 		"damageType": ["Base"]
 	},
 	{
 		"name": "Lightning Bug",
 		"description": "Spawns a lightning bug each time it hits an enemy. Lightning bugs attack a random enemy, dealing 1-80 damage to up to 3 nearby enemies.",
-		"img": "",
+		"img": "Lightning Bug.JPG",
 		"parents": [["Brood Mother", "Lightning"]],
 		"damageType": ["Base", "AOE"]
 	},
 	{
 		"name": "Mosquito Kingdom",
 		"description": "Spawns 1-2 mosquiteos each time it hits an enemy. Mosquitos attack a random enemy, dealing 100-150 damage each. If a mosquito kills an enemy, they steal 2 health.",
-		"img": "",
+		"img": "Mosquito Kingdom.JPG",
 		"parents": [["Mosquito King", "Mosquito Swarm"]],
 		"damageType": ["Base"],
 		"statusEffect": ["Mosquito Spawn", "Lifesteal"]
@@ -703,7 +703,7 @@
 	{
 		"name": "Offspring",
 		"description": "Splits into a clone on hit 4 times.",
-		"img": "",
+		"img": "Offspring.JPG",
 		"parents": [["Cell", "Flesh"]],
 		"damageType": ["Base"],
 		"statusEffect": ["Clone"]
@@ -711,14 +711,14 @@
 	{
 		"name": "Petrify",
 		"description": "Petrifies all enemies within its sightline for 1.5 seconds when first launched, dealing 50-120 damage.",
-		"img": "",
+		"img": "Petrify.JPG",
 		"parents": [["Flesh", "Stone"]],
 		"damageType": ["Base"]
 	},
 	{
 		"name": "Tumor",
 		"description": "Applies tumor on hit. Enemies with a tumor die after 40 seconds (except for bosses).",
-		"img": "",
+		"img": "Tumor.JPG",
 		"parents": [["Radiation Beam", "Flesh"]],
 		"damageType": ["Base"],
 		"statusEffect": ["Tumor"]
@@ -726,7 +726,7 @@
 	{
 		"name": "Zombie",
 		"description": "Infects enemies on hit, giving them a 40% chance to turn into a friendly zombie on death.",
-		"img": "",
+		"img": "Zombie.JPG",
 		"parents": [["Vampire", "Flesh"]],
 		"damageType": ["Base"],
 		"statusEffect": ["Friendly"]
@@ -735,7 +735,7 @@
 	{
 		"name": "Elemental",
 		"description": "Applies a random status effect (burn, slow or freeze) to nearby enemies on hit.",
-		"img": "",
+		"img": "Elemental.JPG",
 		"parents": [["Fire", "Wind", "Ice", "Earthquake"]],
 		"damageType": ["Base", "AOE"],
 		"statusEffect": ["Burn", "Slow", "Freeze"]
@@ -743,7 +743,7 @@
 	{
 		"name": "Armageddon",
 		"description": "Creates a meteor shower upon hitting an enemy. The meteos shower lasts for 5 seconds and deals 30-50 damage / second to enemies within a 3 tile radius.",
-		"img": "",
+		"img": "Armageddon.JPG",
 		"parents": [["Inferno", "Storm"]],
 		"damageType": ["Base"],
 		"statusEffect": ["Burn", "AOE"]
