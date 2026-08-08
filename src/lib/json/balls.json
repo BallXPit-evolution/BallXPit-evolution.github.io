@@ -742,7 +742,7 @@
 	},
 	{
 		"name": "Armageddon",
-		"description": "We'll add data about this ball once we've confirmed it exists",
+		"description": "Creates a meteor shower upon hitting an enemy. The meteos shower lasts for 5 seconds and deals 30-50 damage / second to enemies within a 3 tile radius.",
 		"img": "",
 		"parents": [["Inferno", "Storm"]],
 		"damageType": ["Base"],

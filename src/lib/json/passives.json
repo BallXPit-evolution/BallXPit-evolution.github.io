@@ -523,14 +523,14 @@
 		"img": "",
 		"parents": [["Magnet", "Pressure Valve"]],
 		"damageType": ["AOE"],
-		"statusEffect": [""]
+		"statusEffect": []
 	},
 	{
 		"name": "Windweaver",
-		"description": "We'll add data about this passive once we've confirmed it exists",
+		"description": "Shoot a level 1 wind ball every time you pick up a gem.",
 		"img": "",
 		"parents": [["Bottled Tornado", "Slingshot"]],
-		"damageType": [],
-		"statusEffect": [""]
+		"damageType": ["Base"],
+		"statusEffect": []
 	}
 ]
