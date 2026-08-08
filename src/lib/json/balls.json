@@ -736,7 +736,7 @@
 		"name": "Elemental",
 		"description": "Applies a random status effect (burn, slow or freeze) to nearby enemies on hit.",
 		"img": "Elemental.JPG",
-		"parents": [["Fire", "Wind", "Ice", "Earthquake"]],
+		"parents": [["Burn", "Wind", "Freeze", "Earthquake"]],
 		"damageType": ["Base", "AOE"],
 		"statusEffect": ["Burn", "Slow", "Freeze"]
 	},
