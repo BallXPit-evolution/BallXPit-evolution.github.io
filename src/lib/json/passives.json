@@ -494,25 +494,9 @@
 	},
 
 	{
-		"name": "",
-		"description": "We'll add data about this passive once we've confirmed it exists",
-		"img": "",
-		"parents": [["", ""]],
-		"damageType": [],
-		"statusEffect": [""]
-	},
-	{
 		"name": "Platinum Dumbbell",
 		"description": "Balls deal 12% bonus damage until they hit the back of the field.",
 		"img": "",
-		"damageType": [],
-		"statusEffect": []
-	},
-	{
-		"name": "",
-		"description": "We'll add data about this passive once we've confirmed it exists",
-		"img": "",
-		"parents": [["", ""]],
 		"damageType": [],
 		"statusEffect": []
 	},
