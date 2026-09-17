@@ -14,6 +14,11 @@
 	console.log("dev exposes functions, data exposes ball data")
 </script>
 
+<svelte:head>
+	<meta name="robots" content="noindex,nofollow" />
+	<title>Function Testing | BALL x PIT Evolution</title>
+</svelte:head>
+
 <p class="pb-16">Open the console</p>
 
 <div class="max-h-[75%] overflow-y-auto border">
